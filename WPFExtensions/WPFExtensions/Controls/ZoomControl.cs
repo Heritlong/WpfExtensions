@@ -265,6 +265,11 @@ namespace WPFExtensions.Controls
             get { return (ZoomControlModes)GetValue(ModeProperty); }
             set { SetValue(ModeProperty, value); }
         }
+        public Visibility HideZoom
+        {
+            get { return (Visibility)GetValue(HideZoomProperty); }
+            set { SetValue(HideZoomProperty, value); }
+        }
 
         private static object TranslateX_Coerce(DependencyObject d, object basevalue)
         {

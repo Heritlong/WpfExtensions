@@ -13,32 +13,30 @@
         extbehaviour:WindowSettings.Save="True">
 
     <Window.Resources>
-
         <ObjectDataProvider MethodName="GetValues"
-                            ObjectType="{x:Type System:Enum}"
-                            x:Key="textBoxCommandTriggerEnum">
+                     ObjectType="{x:Type System:Enum}"
+                     x:Key="textBoxCommandTriggerEnum">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="extbehaviour:TextBoxCommandTriggers" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-
         <!--Some styles, not so important-->
         <Style TargetType="{x:Type Label}">
             <Style.Triggers>
                 <Trigger Property="extbehaviour:DragBehaviour.IsDragEnabled"
-                         Value="True">
+                  Value="True">
                     <Setter Property="Background"
-                            Value="YellowGreen" />
+                     Value="YellowGreen" />
                 </Trigger>
                 <Trigger Property="extbehaviour:DragBehaviour.IsDragEnabled"
-                         Value="False">
+                  Value="False">
                     <Setter Property="Background"
-                            Value="WhiteSmoke" />
+                     Value="WhiteSmoke" />
                 </Trigger>
                 <Trigger Property="extbehaviour:DragBehaviour.IsDragging"
-                         Value="True">
+                  Value="True">
                     <Setter Property="Opacity"
-                            Value="0.7" />
+                     Value="0.7" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -48,7 +46,7 @@
                 <GeometryDrawing Brush="DarkBlue">
                     <GeometryDrawing.Geometry>
                         <EllipseGeometry RadiusX="10"
-                                         RadiusY="20" />
+                                  RadiusY="20" />
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
             </DrawingImage.Drawing>
@@ -58,7 +56,7 @@
                 <GeometryDrawing Brush="Red">
                     <GeometryDrawing.Geometry>
                         <EllipseGeometry RadiusX="20"
-                                         RadiusY="10" />
+                                  RadiusY="10" />
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
             </DrawingImage.Drawing>
@@ -68,28 +66,31 @@
                 <GeometryDrawing Brush="Green">
                     <GeometryDrawing.Geometry>
                         <EllipseGeometry RadiusX="15"
-                                         RadiusY="15" />
+                                  RadiusY="15" />
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
             </DrawingImage.Drawing>
         </DrawingImage>
 
         <!--
-            RibbonCommands
-        I declare them as resources, so i can use them 
-        as StaticResources in the CommandBindings.
-        -->
+     RibbonCommands
+ I declare them as resources, so i can use them 
+ as StaticResources in the CommandBindings.
+ -->
         <!--<r:RibbonCommand x:Key="FirstRCmd"
-                         LabelTitle="1st Cmd"
-                         LargeImageSource="{StaticResource BlueEllipse}" />
-        <r:RibbonCommand x:Key="SecondRCmd"
-                         LabelTitle="2nd Cmd"
-                         LargeImageSource="{StaticResource RedEllipse}" />
-        <r:RibbonCommand x:Key="ThirdRCmd"
-                         LabelTitle="3rd Cmd"
-                         LargeImageSource="{StaticResource GreenEllipse}"
-                         ToolTipTitle="3rd Command mapped to the 1st Command"
-                         ToolTipDescription="If you click on this button, the 1st command will be executed. Because the Ribbon Command mapped on the Third command which is mapped on the 1st command." />-->
+                  LabelTitle="1st Cmd"
+                  LargeImageSource="{StaticResource BlueEllipse}" />
+ <r:RibbonCommand x:Key="SecondRCmd"
+                  LabelTitle="2nd Cmd"
+                  LargeImageSource="{StaticResource RedEllipse}" />
+ <r:RibbonCommand x:Key="ThirdRCmd"
+                  LabelTitle="3rd Cmd"
+                  LargeImageSource="{StaticResource GreenEllipse}"
+                  ToolTipTitle="3rd Command mapped to the 1st Command"
+                  ToolTipDescription="If you click on this button, the 1st command will be executed. Because the Ribbon Command mapped on the Third command which is mapped on the 1st command." />-->
+
+
+
     </Window.Resources>
 
     <!--CommandBindings (mapping of the RibbonCommands)-->
@@ -297,7 +298,7 @@
                     </TextBlock>
                 </TabItem.Header>
                 <DockPanel>
-                    <Controls:ZoomControl>
+                    <Controls:ZoomControl HideZoom="Collapsed">
                         <Controls:ZoomControl.Resources>
                             <Style TargetType="{x:Type Rectangle}">
                                 <Setter Property="extbehaviour:DragBehaviour.IsDragEnabled"
@@ -308,10 +309,8 @@
                                         Value="{Binding RelativeSource={RelativeSource Self},Path=(Canvas.Top)}" />
                             </Style>
                         </Controls:ZoomControl.Resources>
-                        <Grid Width="800"
-                              Height="700"
-                              Background="Beige">
-                            <Canvas>
+                        <Grid Background="Beige" Width="700" Height="800">
+                            <Canvas >
                                 <Rectangle Width="100"
                                            Height="200"
                                            Canvas.Left="102"
